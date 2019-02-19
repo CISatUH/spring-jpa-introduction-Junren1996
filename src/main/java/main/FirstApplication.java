@@ -25,4 +25,15 @@ public class FirstApplication implements CommandLineRunner {
         Person personFromDb = personRepository.findFirstByName("John");
         System.out.println(personFromDb);
     }
+    
+      @Override
+    public void run2(String... args) throws Exception {
+        Manager person = new Manager();
+        person.setlastName("Peter");
+        ManagerRepository.save(person);
+
+        Manager personFromDb = ManagerRepository.findLastByName("Peter");
+        System.out.println(personFromDb);
+
+    }
 }
